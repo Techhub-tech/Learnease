@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LearnEase – Learn Smarter, Not Harder</title>
+
+  <!-- Social sharing tags -->
+  <meta property="og:title" content="LearnEase – Learn Smarter, Not Harder"/>
+  <meta property="og:description" content="Understand any note or code in English, Hausa, or Arabic. Free AI-powered study tool for every student. Works offline."/>
+  <meta property="og:image" content="https://techhub-tech.github.io/Learnease/preview.png"/>
+  <meta property="og:url" content="https://techhub-tech.github.io/Learnease/"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="LearnEase – Learn Smarter, Not Harder"/>
+  <meta name="twitter:description" content="Free offline study tool. Notes & code explained in English, Hausa, Arabic."/>
+  <meta name="twitter:image" content="https://techhub-tech.github.io/Learnease/preview.png"/>
+  <meta name="description" content="LearnEase helps students understand notes and code in English, Hausa, and Arabic. Free, offline, by Websprout Hub."/>
+  <meta name="theme-color" content="#0a0e1a"/>
+
+  <!-- Google Fonts with offline fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ======================================
+     ANIMATED BACKGROUND (CSS only, works everywhere)
+====================================== -->
+<div class="bg-wrap">
+  <!-- Animated gradient mesh — like Stripe -->
+  <div class="mesh-bg"></div>
+  <!-- Floating orbs -->
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
+  <!-- Grid lines overlay -->
+  <div class="grid-lines"></div>
+  <!-- Floating shapes (CSS only, no emoji/SVG issues) -->
+  <div class="shape sh1"></div>
+  <div class="shape sh2"></div>
+  <div class="shape sh3"></div>
+  <div class="shape sh4"></div>
+  <div class="shape sh5"></div>
+  <!-- Particle dots -->
+  <div class="particles">
+    <div class="dot d1"></div><div class="dot d2"></div>
+    <div class="dot d3"></div><div class="dot d4"></div>
+    <div class="dot d5"></div><div class="dot d6"></div>
+    <div class="dot d7"></div><div class="dot d8"></div>
+    <div class="dot d9"></div><div class="dot d10"></div>
+    <div class="dot d11"></div><div class="dot d12"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     NAVBAR
+====================================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-in">
+    <a href="#" class="logo" onclick="showPage('home')">
+      <div class="logo-gem"></div>
+      <span>LearnEase</span>
+    </a>
+    <div class="nav-r">
+      <span class="nav-tag">by Websprout Hub</span>
+      <div class="status-pill" id="statusPill">
+        <span class="status-dot"></span>
+        <span id="statusText">Online</span>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================================
+     SIDEBAR
+====================================== -->
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer">
+
+  <div class="dr-top">
+    <div class="dr-logo">
+      <div class="logo-gem sm"></div>
+      <span>LearnEase</span>
+    </div>
+    <button class="dr-x" id="drX">✕</button>
+  </div>
+
+  <div class="dr-card">
+    <div class="dr-avatar">🎓</div>
+    <div>
+      <p class="dr-name">Student Mode</p>
+      <p class="dr-sub">Free · Offline Ready</p>
+    </div>
+  </div>
+
+  <p class="dr-section">NAVIGATE</p>
+  <nav class="dr-nav">
+    <a href="#" class="dr-link act" data-page="home"      onclick="showPage('home')">      <span class="dl-ico">🏠</span><span>Home</span>      </a>
+    <a href="#" class="dr-link"     data-page="about"     onclick="showPage('about')">     <span class="dl-ico">💡</span><span>About</span>     </a>
+    <a href="#" class="dr-link"     data-page="community" onclick="showPage('community')"> <span class="dl-ico">🤝</span><span>Join Community</span></a>
+    <a href="#" class="dr-link"     data-page="library"   onclick="showPage('library')">   <span class="dl-ico">📚</span><span>My Library</span>  <span class="dr-badge" id="libBadge">0</span></a>
+    <a href="#" class="dr-link"     data-page="help"      onclick="showPage('help')">      <span class="dl-ico">❓</span><span>Help</span>      </a>
+  </nav>
+
+  <div class="dr-cta">
+    <p>Join our student community</p>
+    <a href="https://wa.me/your_number" target="_blank" class="dr-btn wa">💬 WhatsApp</a>
+    <a href="https://t.me/your_handle" target="_blank"  class="dr-btn tg">✈️ Telegram</a>
+  </div>
+
+  <div class="dr-foot">
+    <p>Powered by <strong>Websprout Hub</strong></p>
+    <p>Offline · Free · No account needed</p>
+  </div>
+</aside>
+
+<!-- ======================================
+     HOME PAGE
+====================================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero reveal">
+    <div class="hero-badge">
+      <span class="hb-dot"></span>
+      AI-Powered · Offline-Ready · Always Free
+    </div>
+
+    <h1 class="hero-h">
+      Learn <span class="grad-text">Smarter</span>,<br>Not Harder
+    </h1>
+
+    <!-- Typewriter sub -->
+    <p class="hero-sub">
+      <span id="typeTarget"></span><span class="cursor-blink">|</span>
+    </p>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="st-item">
+        <strong class="count" data-target="2400">0</strong><span>+</span>
+        <p>Notes Simplified</p>
+      </div>
+      <div class="st-div"></div>
+      <div class="st-item">
+        <strong>3</strong>
+        <p>Languages</p>
+      </div>
+      <div class="st-div"></div>
+      <div class="st-item">
+        <strong>∞</strong>
+        <p>Simultaneous Users</p>
+      </div>
+      <div class="st-div"></div>
+      <div class="st-item">
+        <strong>100%</strong>
+        <p>Free Forever</p>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <div class="scroll-line"></div>
+      <span>Scroll to start</span>
+    </div>
+  </section>
+
+  <!-- INPUT CARD -->
+  <section class="wrap reveal">
+    <div class="glass-card input-card">
+
+      <div class="mode-bar">
+        <button class="mode-btn act" data-mode="notes" onclick="setMode(this,'notes')">📝 Notes / Questions</button>
+        <button class="mode-btn"     data-mode="code"  onclick="setMode(this,'code')">💻 Explain Code</button>
+      </div>
+
+      <div class="hint-bar" id="hintBar">
+        📖 Paste lecture notes, textbook content, or any question below
+      </div>
+
+      <textarea id="userInput" class="ta"
+        placeholder="Paste your notes or question here..."></textarea>
+
+      <div class="ta-footer">
+        <label class="up-btn" for="fileUp">📎 Attach File</label>
+        <input type="file" id="fileUp" accept=".txt,.js,.html,.css,.py,.java,.cpp,.ts,.pdf,.doc,.docx" hidden/>
+        <span id="fName" class="fname"></span>
+        <span class="char-count" id="charCount">0 characters</span>
+      </div>
+
+      <div class="lang-bar">
+        <span class="lang-lbl">🌐 Output Language</span>
+        <div class="lang-pills">
+          <button class="lp act" onclick="setLang(this,'English')">🇬🇧 English</button>
+          <button class="lp"     onclick="setLang(this,'Hausa')">🇳🇬 Hausa</button>
+          <button class="lp"     onclick="setLang(this,'Arabic')">🇸🇦 Arabic</button>
+        </div>
+        <input type="hidden" id="langVal" value="English"/>
+      </div>
+
+      <button class="btn btn-main gen-btn" id="genBtn" onclick="handleGenerate()">
+        <span class="btn-shine"></span>
+        <span class="btn-text">✦ Generate Now</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- LOADING -->
+  <div class="loading" id="loading">
+    <div class="load-inner">
+      <div class="load-rings">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+      </div>
+      <div>
+        <p class="load-t">Processing your content...</p>
+        <p class="load-s">Detecting type · Building summary</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <section class="wrap" id="resultWrap" style="display:none">
+    <div class="glass-card result-card reveal-fast">
+      <div class="res-top">
+        <div class="res-left">
+          <span class="res-title">✦ Results</span>
+          <span class="res-type" id="rType">Notes</span>
+        </div>
+        <span class="res-lang" id="rLang">English</span>
+      </div>
+
+      <div class="res-block rb-a">
+        <div class="rb-head">📝 Summary</div>
+        <p id="summaryText"></p>
+      </div>
+      <div class="res-block rb-b">
+        <div class="rb-head">💬 Simple Explanation</div>
+        <p id="explainText"></p>
+      </div>
+      <div class="res-block rb-c" id="codeBlock" style="display:none">
+        <div class="rb-head">🔍 Code Breakdown</div>
+        <p id="codeText"></p>
+      </div>
+
+      <div class="res-actions">
+        <button class="btn btn-main sm" onclick="readAloud()">🔊 Read Aloud</button>
+        <button class="btn btn-out  sm" onclick="saveNote()">💾 Save</button>
+        <button class="btn btn-out  sm" onclick="shareResult()">🔗 Share</button>
+        <button class="btn btn-gst  sm" onclick="stopRead()">⏹ Stop</button>
+      </div>
+      <div id="saveMsg" class="save-msg" style="display:none">✅ Saved to My Library!</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="wrap">
+    <div class="sec-label reveal">WHAT WE OFFER</div>
+    <h2 class="sec-title reveal">Everything a Student Needs</h2>
+    <div class="feat-grid">
+      <div class="feat-card reveal" style="--d:.0s"><div class="fc-ico">📄</div><h3>Summarize Notes</h3><p>Turn long notes into sharp, clear summaries in seconds.</p></div>
+      <div class="feat-card reveal" style="--d:.1s"><div class="fc-ico">💻</div><h3>Explain Code</h3><p>Paste HTML, CSS, JS, Python — get a plain English walkthrough.</p></div>
+      <div class="feat-card reveal" style="--d:.2s"><div class="fc-ico">🌍</div><h3>3 Languages</h3><p>English, Hausa, or Arabic — learn in what you understand best.</p></div>
+      <div class="feat-card reveal" style="--d:.3s"><div class="fc-ico">🔊</div><h3>Read Aloud</h3><p>Listen to your summary — study while commuting with no data.</p></div>
+      <div class="feat-card reveal" style="--d:.4s"><div class="fc-ico">💾</div><h3>Offline Library</h3><p>Save notes on your phone — access them with zero internet.</p></div>
+      <div class="feat-card reveal" style="--d:.5s"><div class="fc-ico">🔗</div><h3>Share Anywhere</h3><p>Send results to WhatsApp, Telegram, Twitter in one tap.</p></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="wrap">
+    <div class="sec-label reveal">HOW IT WORKS</div>
+    <h2 class="sec-title reveal">3 Steps to Learn Smarter</h2>
+    <div class="steps-row">
+      <div class="step-card reveal" style="--d:.0s">
+        <div class="step-num">01</div>
+        <div class="step-ico">📋</div>
+        <h3>Paste Your Content</h3>
+        <p>Add your notes, question, or any piece of code into the input box.</p>
+      </div>
+      <div class="step-arrow reveal">→</div>
+      <div class="step-card reveal" style="--d:.15s">
+        <div class="step-num">02</div>
+        <div class="step-ico">⚡</div>
+        <h3>Generate</h3>
+        <p>Hit Generate. LearnEase detects the type and produces a clear summary.</p>
+      </div>
+      <div class="step-arrow reveal">→</div>
+      <div class="step-card reveal" style="--d:.3s">
+        <div class="step-num">03</div>
+        <div class="step-ico">🎯</div>
+        <h3>Learn & Share</h3>
+        <p>Read, listen, save to your offline library, or share with classmates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="wrap">
+    <div class="sec-label reveal">STUDENT VOICES</div>
+    <h2 class="sec-title reveal">Real Students, Real Results</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal" style="--d:.0s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"LearnEase summarized my 40-page biology notes into one clear page. I passed my exam!"</p>
+        <div class="t-auth"><span>👩🏾‍🎓</span><div><strong>Aisha M.</strong><em>SS3 Student, Kano</em></div></div>
+      </div>
+      <div class="testi-card reveal" style="--d:.1s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"It explained my Python code in Hausa! I finally understood what I was writing."</p>
+        <div class="t-auth"><span>👨🏾‍💻</span><div><strong>Chukwuemeka O.</strong><em>Uni Student, Enugu</em></div></div>
+      </div>
+      <div class="testi-card reveal" style="--d:.2s">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Works offline! I study on the bus with no data. Best free tool for Nigerian students."</p>
+        <div class="t-auth"><span>👩🏿‍🎓</span><div><strong>Fatima B.</strong><em>Poly Student, Lagos</em></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="wrap">
+    <div class="cta-band reveal">
+      <div class="cta-glow"></div>
+      <h2>Ready to Study Smarter?</h2>
+      <p>Works offline · No account needed · Free forever · Made for Nigerian students</p>
+      <button class="btn btn-gold" onclick="scrollToInput()">Start Now — It's Free →</button>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ======================================
+     LIBRARY PAGE
+====================================== -->
+<div id="page-library" class="page">
+  <section class="inner-pg">
+    <div class="pg-ico">📚</div>
+    <h2 class="pg-title">My Library</h2>
+    <p class="pg-sub">Saved notes stored on your device — works completely offline.</p>
+    <div id="libList" class="lib-list"></div>
+    <div id="libEmpty" class="empty-box">
+      <div class="eb-ico">📭</div>
+      <p>No saved notes yet.</p>
+      <small>Generate a result and tap <strong>Save</strong> to store it here.</small>
+      <button class="btn btn-main" style="margin-top:18px" onclick="showPage('home')">Go Generate Notes</button>
+    </div>
+  </section>
+</div>
+
+<!-- ======================================
+     COMMUNITY PAGE
+====================================== -->
+<div id="page-community" class="page">
+  <section class="inner-pg center">
+    <div class="pg-ico">🤝</div>
+    <h2 class="pg-title">Join Our Community</h2>
+    <p class="pg-sub">Connect with thousands of students for study tips, exam prep, scholarships, and support. Completely free!</p>
+    <div class="perks">
+      <div class="perk">✅ Daily study tips</div>
+      <div class="perk">✅ Exam preparation guides</div>
+      <div class="perk">✅ Scholarship alerts</div>
+      <div class="perk">✅ Student support network</div>
+    </div>
+    <div class="comm-btns">
+      <a href="https://wa.me/your_number"    target="_blank" class="btn btn-wa lg">💬 Join WhatsApp</a>
+      <a href="https://t.me/your_handle"     target="_blank" class="btn btn-tg lg">✈️ Join Telegram</a>
+    </div>
+    <p class="comm-note">🔒 No spam. Leave anytime.</p>
+    <div class="share-box">
+      <h3>📲 Share LearnEase</h3>
+      <p>Help a classmate study smarter — send them the link!</p>
+      <div class="share-btns">
+        <button class="btn btn-wa" onclick="shareApp('whatsapp')">💬 WhatsApp</button>
+        <button class="btn btn-tg" onclick="shareApp('telegram')">✈️ Telegram</button>
+        <button class="btn btn-out" onclick="shareApp('twitter')">🐦 Twitter/X</button>
+        <button class="btn btn-out" onclick="shareApp('facebook')">📘 Facebook</button>
+        <button class="btn btn-gst" onclick="shareApp('copy')">🔗 Copy Link</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================================
+     ABOUT PAGE
+====================================== -->
+<div id="page-about" class="page">
+  <section class="inner-pg">
+    <div class="pg-ico-anim">✦</div>
+    <h2 class="pg-title">About LearnEase</h2>
+    <p class="about-p"><strong>LearnEase</strong> is a student-first learning tool that helps you understand and simplify complex notes, questions, and code — in your own language.</p>
+    <p class="about-p">Whether you're preparing for WAEC, JAMB, a university exam, or learning to code — LearnEase breaks everything down into clear, simple explanations in English, Hausa, or Arabic.</p>
+    <p class="about-p">No account. No internet required after first load. No cost. Just paste and learn.</p>
+    <div class="mission-card">
+      <span>🎯</span>
+      <div>
+        <strong>Our Mission</strong>
+        <p>Make quality education accessible to every student in Nigeria and beyond — regardless of language, device, or internet access.</p>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="wy-ico">🌐</div><h4>No Server = No Crash</h4><p>Everything runs in your browser. 1 million users can use it simultaneously — zero crashes, zero downtime.</p></div>
+      <div class="why-card"><div class="wy-ico">📡</div><h4>100% Offline</h4><p>Once loaded, the app works without any internet. Your saved notes are stored on your phone forever.</p></div>
+      <div class="why-card"><div class="wy-ico">⚡</div><h4>Instant Speed</h4><p>Pure HTML, CSS, and JavaScript — no loading delays, no wait times, runs perfectly on any phone.</p></div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">🎓 Students First</span>
+      <span class="tag">🌍 Multi-language</span>
+      <span class="tag">📱 Mobile Ready</span>
+      <span class="tag">💾 Offline</span>
+      <span class="tag">🆓 Always Free</span>
+      <span class="tag">🇳🇬 Made for Nigeria</span>
+      <span class="tag">💻 Explains Code</span>
+    </div>
+    <div class="credit-card">Built with ❤️ by <strong>Websprout Hub</strong></div>
+  </section>
+</div>
+
+<!-- ======================================
+     HELP PAGE
+====================================== -->
+<div id="page-help" class="page">
+  <section class="inner-pg">
+    <div class="pg-ico">❓</div>
+    <h2 class="pg-title">How to Use LearnEase</h2>
+    <p class="pg-sub">Ready in under 60 seconds. No sign-up ever required.</p>
+    <div class="help-steps">
+      <div class="h-step"><div class="hs-n">1</div><div class="hs-body"><h4>Choose Your Mode</h4><p>Select <strong>Notes/Questions</strong> for study notes, or <strong>Explain Code</strong> for HTML, CSS, JavaScript, Python, etc.</p></div></div>
+      <div class="h-step"><div class="hs-n">2</div><div class="hs-body"><h4>Paste Your Content</h4><p>Copy and paste your notes, questions, or code. You can also upload a text or code file directly.</p></div></div>
+      <div class="h-step"><div class="hs-n">3</div><div class="hs-body"><h4>Choose a Language</h4><p>Pick <strong>English</strong>, <strong>Hausa</strong>, or <strong>Arabic</strong> — whichever you understand best.</p></div></div>
+      <div class="h-step"><div class="hs-n">4</div><div class="hs-body"><h4>Tap Generate</h4><p>Click Generate. You'll get a Summary, a Plain Explanation, and a Code Breakdown if you pasted code.</p></div></div>
+      <div class="h-step"><div class="hs-n">5</div><div class="hs-body"><h4>Listen, Save, or Share</h4><p>Use <strong>Read Aloud</strong>, <strong>Save</strong> to offline library, or <strong>Share</strong> to WhatsApp/Telegram.</p></div></div>
+    </div>
+    <div class="tip yellow">💡 <strong>Code:</strong> Paste any HTML, CSS, JS, or Python — LearnEase explains every part simply!</div>
+    <div class="tip blue">📴 <strong>Offline:</strong> Everything saves to your phone. No internet? No problem!</div>
+    <div class="tip green">🔗 <strong>Share:</strong> The Share button works with WhatsApp, Telegram, and every other app on your phone.</div>
+  </section>
+</div>
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+<footer class="footer">
+  <div class="ft-in">
+    <div class="ft-logo"><div class="logo-gem sm"></div><span>LearnEase</span></div>
+    <div class="ft-links">
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('help')">Help</a>
+      <a href="#" onclick="showPage('community')">Community</a>
+      <a href="#" onclick="showPage('library')">Library</a>
+    </div>
+    <p class="ft-copy">Powered by <strong>Websprout Hub</strong> · Offline-First · Free Forever · © 2025</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
